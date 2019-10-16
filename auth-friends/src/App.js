@@ -5,7 +5,7 @@ import Login from "./Components/Login";
 import PrivateRoute from "./Components/PrivateRoute";
 import AddFriend from "./Components/AddFriend";
 import Logout from "./Components/Logout";
-import styled from "styled-components";
+import { Button } from "@material-ui/core";
 
 function App(props) {
 	const [logged, setLogged] = useState(true);
@@ -13,15 +13,15 @@ function App(props) {
 		<div className="App">
 			<br />
 			{logged && (
-				<button>
+				<Button>
 					<Link to="/">Log In</Link>
-				</button>
+				</Button>
 			)}
 
 			{!logged && (
-				<button>
+				<Button>
 					<Link to="/logout">Log Out</Link>
-				</button>
+				</Button>
 			)}
 			<br />
 			<br />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "./AxiosAuth";
 import Friend from "./Friend";
 import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const FriendsList = props => {
 	const [friends, setFriends] = useState();
@@ -34,9 +35,9 @@ const FriendsList = props => {
 		<div>
 			{loading && "Finding your friends..."}
 			{friends && (
-				<button>
+				<Button>
 					<Link to="/add">Add New Friend</Link>
-				</button>
+				</Button>
 			)}
 			<div>
 				{friends &&

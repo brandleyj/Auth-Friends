@@ -1,4 +1,5 @@
 import React from "react";
+import { Card, Button } from "@material-ui/core";
 
 const Friend = props => {
 	const handleEdit = e => {
@@ -6,7 +7,7 @@ const Friend = props => {
 		props.history.push(`/edit/${props.friend.id}`);
 	};
 	return (
-		<div>
+		<Card>
 			<div>
 				<h1>{props.friend.name}</h1>
 				<h2>{props.friend.age} years old</h2>
@@ -14,19 +15,19 @@ const Friend = props => {
 			</div>
 			<div>
 				<div className="ui two buttons">
-					<button basic color="green" onClick={e => handleEdit(e)}>
+					<Button basic color="green" onClick={e => handleEdit(e)}>
 						Edit
-					</button>
-					<button
+					</Button>
+					<Button
 						basic
 						color="red"
 						onClick={e => props.handleDelete(e, props.friend.id)}
 					>
 						Delete
-					</button>
+					</Button>
 				</div>
 			</div>
-		</div>
+		</Card>
 	);
 };
 
